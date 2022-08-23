@@ -4,11 +4,11 @@ import Carousel from "./Carousel";
 import ErrorBoundary from "./ErrorBoundary";
 import ThemeContext from "./ThemeContext";
 import Modal from "./Modal";
-import { PetAPIResponse, Animal } from './APIResponsesTypes';
+import { PetAPIResponse, Animal } from "./APIResponsesTypes";
 
-class Details extends Component<{params: { id?: string}}> {
-  state = { 
-    loading: true, 
+class Details extends Component<{ params: { id?: string } }> {
+  state = {
+    loading: true,
     showModal: false,
     animal: "" as Animal,
     breed: "",
@@ -16,7 +16,7 @@ class Details extends Component<{params: { id?: string}}> {
     state: "",
     description: "",
     name: "",
-    images: [] as string[]
+    images: [] as string[],
   };
 
   async componentDidMount() {

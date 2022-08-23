@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import { Animal, BreedListAPIResponse } from './APIResponsesTypes';
+import { Animal, BreedListAPIResponse } from "./APIResponsesTypes";
 
 const localCache: {
-  [index: string]: string[]
+  [index: string]: string[];
 } = {};
 
-type Status = "unloaded | loading | loaded"
+type Status = "unloaded" | "loading" | "loaded";
 
 export default function useBreedList(animal: Animal) {
   const [breedList, setBreedList] = useState([] as string[]);

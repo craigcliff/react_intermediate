@@ -1,8 +1,13 @@
-import React, { FunctionComponent, MutableRefObject, useEffect, useRef } from "react";
+import React, {
+  FunctionComponent,
+  MutableRefObject,
+  useEffect,
+  useRef,
+} from "react";
 import { createPortal } from "react-dom";
 
 const Modal: FunctionComponent = ({ children }) => {
-  const elRef: MutableRefObject<HTMLDivElement |  null> = useRef(null);
+  const elRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
   if (!elRef.current) {
     elRef.current = document.createElement("div");
   }
@@ -13,9 +18,9 @@ const Modal: FunctionComponent = ({ children }) => {
       return;
     }
     modalRoot.appendChild(elRef.current);
-    return () =>  { 
+    return () => {
       if (elRef.current) {
-        modalRoot.removeChild(elRef.current)
+        modalRoot.removeChild(elRef.current);
       }
     };
   }, []);
